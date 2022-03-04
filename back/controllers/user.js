@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 const db = require("../database/database");
 const JWT_TOKEN = process.env.JWT_TOKEN;
 
+
 // Inscription d'un utilisateur :
 // Minimum 8 caractères, 1 lettre majuscule, 1 lettre minuscule et 1 nombre
 
@@ -45,6 +46,7 @@ exports.signup = (req, res, next) => {
     }
 };
 
+
 // Connexion d'un utilisateur :
 
 exports.login = (req, res, next) => {
@@ -70,6 +72,7 @@ exports.login = (req, res, next) => {
     });
   });
 };
+
 
 // Supprime le compte d'un utilisateur
 
