@@ -1,7 +1,67 @@
 <script>
 export default {
-    name:"LoginPage"
-}
+    name:"LoginPage",
+ data() {
+    return {
+      email: "",
+      password: "",
+      show: true,
+      error: "",
+      emailRegex: /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
+      passwordRegex: /^(?=.*[a-z])(?=.*[0-9])(?=.{8,})/,
+    };
+  },
+  methods: {
+    //Fonction de vérification de la longueur des données
+    lenghtCheck(length, object, message) {
+      if (object.length === length) {
+        this.error = "Votre " + message + " est trop long";
+      } else {
+        this.error = "";
+      }
+    },
+    //Fonction d'inscription
+    signup() {
+      let newUser = {
+        email: this.email,
+        password: this.password,
+        profil_picture: url.substring(0, url.length - 4) + "images/avatar.png",
+      };
+      if (!this.emailRegex.test(this.email)) {
+        return (this.error = "Vous devez renseigner une adresse email valide");
+      } else if (!this.pseudoRegex.test(this.pseudo)) {
+        return (this.error =
+          "Votre pseudo doit contenir au moins 3 caractères");
+      } else if (!this.passwordRegex.test(this.password)) {
+        return (this.error =
+          "Votre mot de passe doit contenir au moins 8 caractères et au moins 1 lettre et 1 chiffre");
+      }
+      this.$http.post(url + "users", newUser)
+        .then((res) => {
+          if (res.status === 200) {
+            this.$http.post(url + "users/login", newUser) //si inscription fonctionne = login
+              .then((res) => {
+                if (res.status === 200) {
+                  localStorage.setItem("currentUser", JSON.stringify(res.data));
+                  this.$router.push("/");
+                }
+              })
+              .catch(() => {
+                localStorage.clear();
+                this.error = "Un problème est survenu, veuillez réessayer";
+              });
+          }
+        })
+        .catch((err) => {
+          if (err.response.status === 409) {
+            this.error = "Adresse email déjà utilisée";
+          } else {
+            this.error = "Un problème est survenu, veuillez réessayer";
+          }
+        });
+    },
+  },
+};
 </script>
 
 

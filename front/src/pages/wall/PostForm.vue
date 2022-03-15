@@ -7,13 +7,8 @@ export default{
 
 <template>
 <div class="form-floating mt-4">
-  <textarea 
-  contenteditable
-  class="form-control" 
-  placeholder="Leave a comment here" 
-  id="floatingTextarea">
+  <textarea contenteditable class="form-control"  placeholder="Leave a comment here" id="floatingTextarea">
   </textarea>
-  <label for="floatingTextarea">Comments</label>
 </div>
 <div class="d-flex">
 <label for="file-input" class="btn btn-secondary mt-1">Add image</label>
@@ -23,8 +18,8 @@ export default{
 <hr class="dropdown-divider mt-4">
 </template>
 
-<style module>
-input {
+<style scoped>
+#file-input {
     display: none;
 }
 body {

@@ -1,5 +1,5 @@
 <script>
-import LoginPage from './pages/LoginPage.vue'
+import LoginPage from './pages/SignUp.vue'
 import AppNavbar from './components/layout/AppNavbar.vue'
 
 export default {
@@ -17,4 +17,7 @@ export default {
 </template>
 
 <style>
+body {
+    background-color: #5f5f5f1a !important;
+}
 </style>

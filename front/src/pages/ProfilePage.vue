@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: "ProfilPage"
+    name: "ProfilePage"
 }
 </script>
 
@@ -30,7 +30,7 @@ export default {
                       <h4>Roland APPERT</h4>
                       <p class="text-secondary mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Groupomania, Paris, France</p>
-                      <button class="btn btn-primary mx-1">Posts</button>
+                      <a href="/editprofile"><button class="btn btn-primary mx-1">Edit</button></a>
                       <button class="btn btn-outline-primary mx-1">Mail</button>
                     </div>
                   </div>
