@@ -1,7 +1,7 @@
 import {createRouter, createWebHistory} from "vue-router"
 
 import WallPage from "../pages/wall/WallPage.vue"
-import LoginPage from "../pages/SignUp.vue"
+import LoginPage from "../pages/LoginPage.vue"
 import ProfilePage from "../pages/ProfilePage.vue"
 import EditProfile from "../pages/EditProfile.vue"
 
