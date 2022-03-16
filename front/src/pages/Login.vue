@@ -1,6 +1,6 @@
 <script>
 export default {
-    name:"LoginPage",
+    name:"Login",
  data() {
     return {
       email: "",

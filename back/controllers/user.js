@@ -29,7 +29,6 @@ exports.signup = (req, res, next) => {
                 name: req.body.name,
                 email: req.body.email,
                 password: hash,
-                admin: 0,
             });
             db.query(`INSERT INTO user SET ?`, user, (error, result) => {
                 if (error) {
@@ -64,11 +63,10 @@ exports.login = (req, res, next) => {
       
       const id = result[0].id_user;
       const name = result[0].name;
-      const admin = result[0].admin;
 
-      const token = jwt.sign({ userId: id, adminRank: result[0].admin, name: name }, JWT_TOKEN, { expiresIn: "24h" });
+      const token = jwt.sign({ userId: id, name: name }, JWT_TOKEN, { expiresIn: "24h" });
 
-      res.status(200).json({ token, userId: id, name: name, admin: admin });
+      res.status(200).json({ token, userId: id, name: name });
     });
   });
 };

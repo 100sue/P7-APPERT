@@ -12,7 +12,6 @@ module.exports = (req, res, next) => {
         const token = req.headers.authorization.replace("Bearer ", "");
         const decodedToken = jwt.verify(token, JWT_TOKEN);
         req.id_user = decodedToken.userId; 
-        req.admin = decodedToken.adminRank;
         
         if(decodedToken.userId == undefined) {
             throw new Error
