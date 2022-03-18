@@ -41,14 +41,6 @@ export default {
 							</div>
 							<div class="row mb-3">
 								<div class="col-sm-3">
-									<h6 class="mb-0">Phone</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="(239) 816-9029">
-								</div>
-							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
 									<h6 class="mb-0">Mobile</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
@@ -69,22 +61,6 @@ export default {
 								</div>
 								<div class="col-sm-9 text-secondary">
 									<input type="text" class="form-control" value="Full-Stack developer">
-								</div>
-							</div>
-                            <div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Website</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="www.scoreur.com">
-								</div>
-							</div>
-                            <div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Github</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="roland-Appert.net">
 								</div>
 							</div>
                             <div class="row mb-3">
