@@ -30,19 +30,21 @@ app.use((req, res, next) => {
 });
 
 // Transformation des données en un objet JSON
-// Active helmet
-// Permet de charger les fichiers qui sont dans 'images'
 
 app.use(bodyParser.json());
-app.use(helmet());
+
+// Permet de charger les fichiers qui sont dans 'images'
+// Configuration des routes d'API :
+
 app.use('/images', express.static(path.join(__dirname, 'images')));
-
-// Routes API => user
-// Routes API => post
-// Routes API => comments
-
 app.use('/api/auth', userRoutes);
 app.use('/api/post', postRoutes);
 app.use('/api/comment', commentsRoutes);
+
+// Active helmet
+
+app.use(helmet());
+
+// Exportation du module afin de pouvoir le réutiliser :
 
 module.exports = app;
