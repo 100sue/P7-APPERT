@@ -6,7 +6,7 @@
 
  Réseau Social Groupomania : projet frontend et backend.
  
-( Back-end sur ce repository)
+ Projet S.E.V.N (Sql, Express, Vue, Node)
  
   ## Objectif : ## 
 
